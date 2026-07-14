@@ -1,0 +1,21 @@
+# Dataset
+*.tsv
+images/
+data/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+
+# PyTorch
+*.pth
+*.pt
+
+# Logs
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
