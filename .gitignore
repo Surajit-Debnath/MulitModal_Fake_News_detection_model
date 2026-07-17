@@ -2,7 +2,7 @@
 *.tsv
 images/
 data/
-
+lightning_logs/
 # Python
 __pycache__/
 *.pyc
