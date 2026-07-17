@@ -2,6 +2,8 @@
 *.tsv
 images/
 data/
+fakeddit_cleaned.csv
+failed_downloads.csv
 lightning_logs/
 # Python
 __pycache__/
