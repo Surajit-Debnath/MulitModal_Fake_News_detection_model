@@ -77,7 +77,9 @@ class MultimodalFakeNewsDetectionModel(pl.LightningModule):
         )
 
         self.model = self._build_model()
-
+        self.test_preds = []
+        self.test_labels = []
+        self.test_probs = []
     def forward(self, text, image, label):
         return self.model(text, image, label)
 
@@ -149,7 +151,16 @@ class MultimodalFakeNewsDetectionModel(pl.LightningModule):
 
         pred, loss = self.model(text, image, label)
 
+    # Convert logits to probabilities
+        probs = torch.softmax(pred, dim=1)
+
+    # Predicted class
         pred_label = torch.argmax(pred, dim=1)
+
+    # Store results
+        self.test_preds.extend(pred_label.cpu().tolist())
+        self.test_labels.extend(label.cpu().tolist())
+        self.test_probs.extend(probs[:, 1].cpu().tolist())   # Probability of Fake class
 
         accuracy = (pred_label == label).float().mean()
 
@@ -167,8 +178,7 @@ class MultimodalFakeNewsDetectionModel(pl.LightningModule):
             on_epoch=True,
         )
 
-        return loss
-
+        return loss     
     
 
     def configure_optimizers(self):
