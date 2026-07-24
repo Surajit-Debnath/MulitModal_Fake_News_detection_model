@@ -1,0 +1,37 @@
+# ===========================
+# FastAPI Backend
+# ===========================
+
+fastapi==0.116.1
+uvicorn==0.35.0
+python-multipart==0.0.20
+
+# ===========================
+# Deep Learning
+# ===========================
+
+torch==2.8.0
+torchvision==0.23.0
+transformers==4.56.0
+sentence-transformers==5.1.0
+
+# ===========================
+# Image Processing
+# ===========================
+
+Pillow==11.3.0
+
+# ===========================
+# Utilities
+# ===========================
+
+numpy==2.3.2
+requests==2.32.5
+tqdm==4.67.1
+
+# ===========================
+# Optional (install only if used)
+# ===========================
+
+pytorch-lightning==2.5.3
+timm==1.0.19

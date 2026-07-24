@@ -3,6 +3,7 @@
 images/
 data/
 lightning_logs/
+checkpoints/
 # Python
 __pycache__/
 *.pyc
